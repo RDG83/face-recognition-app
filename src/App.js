@@ -34,20 +34,13 @@ class App extends Component {
         this.state = {
             input: "",
             imageUrl: "",
-            ingredients: {},
+            ingredients: [],
         };
     }
 
     findIngredients = (data) => {
         const foundIngredients = data.outputs[0].data.concepts;
-        const ingredientList = document.getElementById("firstIngredient");
-        foundIngredients.map(item => {
-            let node = document.createElement("LI")
-            let textnode = document.createTextNode(item.name)
-            node.appendChild(textnode)
-            ingredientList.appendChild(node)
-
-        })
+        return foundIngredients;
     };
 
     onInputChange = (event) => {
@@ -74,7 +67,10 @@ class App extends Component {
                     onInputChange={this.onInputChange}
                     onSubmit={this.onSubmit}
                 />
-                <FoodRecognition imageUrl={this.state.imageUrl} />
+                <FoodRecognition
+                    imageUrl={this.state.imageUrl}
+                    ingredients={this.state.ingredients}
+                />
             </div>
         );
     }

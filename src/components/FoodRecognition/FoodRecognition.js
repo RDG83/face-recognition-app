@@ -1,20 +1,30 @@
 import React from "react";
-import './FoodRecognition.css';
+import "./FoodRecognition.css";
 
-const FoodRecognition = ({ imageUrl }) => {
+const FoodRecognition = ({ imageUrl, ingredients }) => {
     return (
-        
-        <div>
-            <img
-                className="ma5"
-                src={imageUrl}
-                alt=""
-                width="500"
-                height="auto"
-            />
-            <ul id="firstIngredient">
-             
-            </ul>
+        <div className="center">
+            <div>
+                <img
+                    className="ma5"
+                    src={imageUrl}
+                    alt=""
+                    width="500"
+                    height="auto"
+                />
+            </div>
+            <div>
+                <ul className="ma5 bg-washed-blue">
+                    {ingredients.map((ingredient, i) => {
+                        return (
+                            <li>
+                                {ingredient.name}
+                                {ingredient.value}
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };
