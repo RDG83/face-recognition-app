@@ -1,3 +1,26 @@
-li {
+ul {
     list-style: none;
+    background-color: aliceblue;
+    padding: 0;
 }
+
+li {
+    width: 100%;
+}
+
+.firstLi {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingredientLi {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .ingredientLi > span {
+        margin-left: 2px;
+        margin-right: 25px;
+    }
