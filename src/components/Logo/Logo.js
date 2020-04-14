@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-tilt";
 import "./Logo.css";
-import face from "./face.png";
+import food from "./food.png";
 
 const Logo = () => {
     return (
@@ -13,7 +13,7 @@ const Logo = () => {
             >
                 <div className="Tilt-inner pa1">
                     {" "}
-                    <img className="mt2" src={face} alt="face" />{" "}
+                    <img className="mt2" src={food} alt="face" />{" "}
                 </div>
             </Tilt>{" "}
         </div>
