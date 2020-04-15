@@ -3,19 +3,16 @@ import "./FoodRecognition.css";
 
 const FoodRecognition = ({ imageUrl, ingredients }) => {
     return (
-        <div className="center w-80">
-            <div className="w-70">
+        <div className="center w-80 mt5">
+            <div className="w-70 mr1">
                 <img
-                    className="ma5"
                     src={imageUrl}
                     alt=""
-                    width="500"
-                    height="auto"
                 />
             </div>
             <div className="w-30">
             {ingredients.length > 0 &&
-                <ul>
+                <ul className="ingredientlist">
                     <li className="firstLi">
                         <h3>{"Ingredient"}</h3>
                         <h3>{"Probability"}</h3>
