@@ -14,6 +14,7 @@ const FoodRecognition = ({ imageUrl, ingredients }) => {
                 />
             </div>
             <div className="w-30">
+            {ingredients.length > 0 &&
                 <ul>
                     <li className="firstLi">
                         <h3>{"Ingredient"}</h3>
@@ -28,6 +29,7 @@ const FoodRecognition = ({ imageUrl, ingredients }) => {
                         );
                     })}
                 </ul>
+                }
             </div>
         </div>
     );

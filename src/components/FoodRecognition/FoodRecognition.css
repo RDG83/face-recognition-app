@@ -18,9 +18,9 @@ li {
 .ingredientLi {
     display: flex;
     justify-content: space-between;
-    }
+}
 
-    .ingredientLi > span {
-        margin-left: 2px;
-        margin-right: 25px;
-    }
+.ingredientLi > span {
+    margin-left: 2px;
+    margin-right: 25px;
+}
