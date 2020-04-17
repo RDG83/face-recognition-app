@@ -9,6 +9,7 @@ import Particles from "react-particles-js";
 import FoodRecognition from "./components/FoodRecognition/FoodRecognition";
 import Clarifai from "clarifai";
 import Signin from "./components/Signin/Signin";
+import Register from "./components/Register/Register";
 
 const app = new Clarifai.App({
     apiKey: "acaa98cd20fa4ab6bec69cb4c5e3e714",
@@ -64,17 +65,15 @@ class App extends Component {
     };
 
     onRouteChange = (route) => {
-        this.setState({route: route});
-    }
+        this.setState({ route: route });
+    };
 
     render() {
         return (
             <div className="App">
                 <Particles className="particles" params={particleOptions} />
                 <Navigation onRouteChange={this.onRouteChange} />
-                {this.state.route === "signin" ? (
-                    <Signin onRouteChange={this.onRouteChange}/>
-                ) : (
+                {this.state.route === "home" ? (
                     <div>
                         <Logo />
                         <Rank />
@@ -87,6 +86,10 @@ class App extends Component {
                             ingredients={this.state.ingredients}
                         />
                     </div>
+                ) : this.state.route === "signin" ? (
+                    <Signin onRouteChange={this.onRouteChange} />
+                ) : (
+                    <Register onRouteChange={this.onRouteChange}/>
                 )}
             </div>
         );

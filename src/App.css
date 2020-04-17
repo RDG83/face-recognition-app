@@ -15,3 +15,8 @@
   left: 0;
   z-index: -1;
 }
+
+.p-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
