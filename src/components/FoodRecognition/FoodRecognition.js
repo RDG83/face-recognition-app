@@ -3,7 +3,7 @@ import "./FoodRecognition.css";
 
 const FoodRecognition = ({ imageUrl, ingredients }) => {
     return (
-        <div className="center w-80 mt5">
+        <div className="center w-80 mt5 mb3">
             <div className="w-70 mr1">
                 <img
                     src={imageUrl}

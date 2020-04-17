@@ -5,7 +5,7 @@ const Signin = ({ onRouteChange }) => {
     return (
         <article className="br3 ba dark-gray b--black-20 mv4 w-100 w-50-m w-25-l mw6 center shadow-5">
             <div className="pa4 black-80">
-                <form className="measure">
+                <div className="measure">
                     <fieldset
                         id="sign_up"
                         className="ba b--transparent ph0 mh0"
@@ -14,7 +14,7 @@ const Signin = ({ onRouteChange }) => {
                         <div className="mt3">
                             <label
                                 className="db fw6 lh-copy f6"
-                                for="email-address"
+                                htmlFor="email-address"
                             >
                                 Email
                             </label>
@@ -26,7 +26,7 @@ const Signin = ({ onRouteChange }) => {
                             />
                         </div>
                         <div className="mv3">
-                            <label className="db fw6 lh-copy f6" for="password">
+                            <label className="db fw6 lh-copy f6" htmlFor="password">
                                 Password
                             </label>
                             <input
@@ -46,12 +46,16 @@ const Signin = ({ onRouteChange }) => {
                         />
                     </div>
                     <div className="lh-copy mt3">
-                        <p onClick={() => {onRouteChange("register")}}  
-                        className="p-link f6 link dim black db">
+                        <p
+                            onClick={() => {
+                                onRouteChange("register");
+                            }}
+                            className="p-link f6 link dim black db"
+                        >
                             Register{" "}
                         </p>
                     </div>
-                </form>
+                </div>
             </div>
         </article>
     );
