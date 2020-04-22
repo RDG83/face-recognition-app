@@ -39,9 +39,28 @@ class App extends Component {
             ingredients: [],
             route: "signin",
             isSignedIn: false,
+            user: {
+                id: "",
+                name: "",
+                email: "",
+                entries: 0,
+                joined: "",
+            },
         };
     }
 
+    loadUser = (data) => {
+        this.setState({
+            user: {
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                entries: data.entries,
+                joined: data.joined,
+            },
+        });
+        console.log(this.state.user);
+    };
 
     findIngredients = (data) => {
         const foundIngredients = data.outputs[0].data.concepts;
@@ -86,7 +105,7 @@ class App extends Component {
                 {this.state.route === "home" ? (
                     <div>
                         <Logo />
-                        <Rank />
+                        <Rank user={this.state.user}/>
                         <ImageLinkForm
                             onInputChange={this.onInputChange}
                             onSubmit={this.onSubmit}
@@ -99,7 +118,10 @@ class App extends Component {
                 ) : this.state.route === "signin" ? (
                     <Signin onRouteChange={this.onRouteChange} />
                 ) : (
-                    <Register onRouteChange={this.onRouteChange} />
+                    <Register
+                        onRouteChange={this.onRouteChange}
+                        loadUser={this.loadUser}
+                    />
                 )}
             </div>
         );
