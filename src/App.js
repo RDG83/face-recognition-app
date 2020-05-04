@@ -7,13 +7,8 @@ import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import Particles from "react-particles-js";
 import FoodRecognition from "./components/FoodRecognition/FoodRecognition";
-import Clarifai from "clarifai";
 import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
-
-const app = new Clarifai.App({
-    apiKey: "acaa98cd20fa4ab6bec69cb4c5e3e714",
-});
 
 const particleOptions = {
     particles: {
@@ -61,7 +56,6 @@ class App extends Component {
                 joined: data.joined,
             },
         });
-        console.log(this.state.user);
     };
 
     findIngredients = (data) => {
@@ -79,9 +73,15 @@ class App extends Component {
 
     onPictureSubmit = () => {
         this.setState({ imageUrl: this.state.input });
-        app.models
-            .predict("bd367be194cf45149e75f01d59f77ba7", this.state.input)
-            .then((response) => {
+        fetch("http://localhost:4000/imageurl", {
+            method: "post",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+                input: this.state.input
+            })
+        })
+            .then(response => response.json())
+            .then(response => {
                 if (response) {
                     fetch("http://localhost:4000/image", {
                         method: "put",
@@ -99,8 +99,9 @@ class App extends Component {
                 }
                 this.setIngredients(this.findIngredients(response));
             })
-            .catch((err) => console.log(err));
-    };
+            .catch((err) => console.log(err))
+    }
+
 
     onRouteChange = (route) => {
         if (route === "signin") {
