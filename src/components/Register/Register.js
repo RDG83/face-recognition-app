@@ -23,7 +23,7 @@ class Register extends React.Component {
     };
 
     onSubmitRegister = () => {
-        fetch("http://localhost:4000/register", {
+        fetch("https://secure-coast-73756.herokuapp.com/register", {
             method: "post",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
@@ -37,6 +37,8 @@ class Register extends React.Component {
                 if (user.id) {
                     this.props.loadUser(user);
                     this.props.onRouteChange("home");
+                } else {
+                    console.log(user)
                 }
             })
     };
