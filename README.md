@@ -1,6 +1,6 @@
 This app was made based on the face recognition app as part of the Zero to Mastery course from Andrei Neagoie.
 
-See the app live here: https://rdg83.github.io/food-recognition-app/
+I've deployed the app to heroku: https://ingredient-finder-app.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
