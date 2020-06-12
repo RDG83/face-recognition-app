@@ -1,6 +1,6 @@
 {
-    "homepage": "https://rdg83.github.io/face-recognition-app",
-    "name": "face-recognition-app",
+    "homepage": "https://rdg83.github.io/food-recognition-app",
+    "name": "food-recognition-app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
